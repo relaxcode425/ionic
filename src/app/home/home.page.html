@@ -14,7 +14,44 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Inicio de Sesión</ion-card-title>
+        <ion-card-subtitle>Credenciales</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+      
+          <ion-item>
+            <ion-input labelPlacement="floating" [(ngModel)]="user.username" placeholder="Usuario" label="Ingrese usuario"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-input labelPlacement="floating" [(ngModel)]="user.password" placeholder="Contraseña" type="password" label="Ingrese contraseña"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-toggle aria-label="Success toggle" color="success" [checked]="true">Recuerdame</ion-toggle>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              <p opacity="50%" align="center" >{{mensaje}}</p>
+            </ion-label>
+          </ion-item>
+      
+        </ion-list>
+      </ion-card-content>
+
+      <ion-button (click)="validar()">
+        Ingresar
+      </ion-button>
+
+      <ion-button>
+        Registrarse
+      </ion-button>
+      <br><br>
+    </ion-card>
   </div>
 </ion-content>
